@@ -7,16 +7,26 @@ body {
 .col-lg-9 {
     border: 1px solid black;
     height: 10vw;
+    padding-top: 1%;
 }
 
 .col-lg-3 {
     border: 1px solid green;
     height: 10vw;
+    margin: auto
 } 
 
 .container {
-    border: 1px solid white;
-    margin-top: 3%
+    border: 3px solid red;
+    margin-top: 3%;
+} 
+
+h1 {
+    text-align: center;
+} 
+
+.HideElements {
+    visibility: hidden;
 } 
 
 .row {
@@ -24,10 +34,6 @@ body {
     margin: auto;
 } 
 
-.container {
-    border: 3px solid red;
-} 
-
-h1 {
-    text-align: center;
+.viewscreen {
+    border: 1px solid black;
 }
