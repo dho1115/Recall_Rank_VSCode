@@ -2,4 +2,32 @@
 
 body {
     background-color: lightgray;
+} 
+
+.col-lg-9 {
+    border: 1px solid black;
+    height: 10vw;
+}
+
+.col-lg-3 {
+    border: 1px solid green;
+    height: 10vw;
+} 
+
+.container {
+    border: 1px solid white;
+    margin-top: 3%
+} 
+
+.row {
+    border: 3px solid black;
+    margin: auto;
+} 
+
+.container {
+    border: 3px solid red;
+} 
+
+h1 {
+    text-align: center;
 }
