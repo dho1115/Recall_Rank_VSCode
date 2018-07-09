@@ -5,6 +5,7 @@ let timer = document.querySelector(".timer"); //timer element.
 let viewscreen = document.querySelector(".viewscreen"); //viewscreen element;
 let button = document.querySelector("button"); //button.
 let guessBox = document.querySelector(".guessBox"); //Basically, this is the <INPUT />.
+let harderLevel = document.querySelector(".harderLevel"); //<button> for harder level.
 let recallrank = document.querySelector(".recallrank");
 let recallscore = 0; //This is your recall score.
 let response = document.querySelector(".response"); //reveals whether you are right or wrong.
@@ -13,6 +14,7 @@ let Stringnum = ""; //This is where we add the number to grow our string.
 let count = 0; //This will go inside the set interval and act as TIMER.
 
 ///////////////Functions Needed For The Program///////////////
+
 function HideButtonAndInputAtStart() {  //Hides Button and Input box.
     button.classList.add("HideElements");
     guessBox.classList.add("HideElements");
@@ -42,6 +44,12 @@ function RevealNumber() {  //This is actually a NUMBER GENERATOR.
 function AnalyzeGuess() {
     response.textContent = (guessBox.value == Number(Stringnum)) ? CorrectGuess() : WrongGuess();
 }
+function hardLevel() { //This function is if the user wants a harder level. Bound to <button class="harderLevel">
+    RevealNumber(); //Generate a new, harder number.
+    clock;
+    AnalyzeGuess(); //When clock ends, this function will analyze the person's guess.
+} 
+
 /////////////////////////////////////////////////////////////
 
 RevealNumber(); //The initial number is revealed.
