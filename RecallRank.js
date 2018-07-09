@@ -4,10 +4,10 @@
 let timer = document.querySelector(".timer"); //timer element.
 let viewscreen = document.querySelector(".viewscreen"); //viewscreen element;
 let button = document.querySelector("button"); //button.
-let guessBox = document.querySelector(".guessBox");
-let recallrank = document.querySelector("recallrank");
+let guessBox = document.querySelector(".guessBox"); //Basically, this is the <INPUT />.
+let recallrank = document.querySelector(".recallrank");
 let recallscore = 0; //This is your recall score.
-let response = document.querySelector("response"); //reveals whether you are right or wrong.
+let response = document.querySelector(".response"); //reveals whether you are right or wrong.
 let RandInteger = Math.floor(Math.random()*10)+1; //Generate Random Integer.
 let Stringnum = ""; //This is where we add the number to grow our string.
 let count = 0; //This will go inside the set interval and act as TIMER.
@@ -22,26 +22,29 @@ function ShowButtonInputAndTextChange() {  //Reveals Button and Input box.
     guessBox.classList.remove("HideElements");
     viewscreen.textContent = "What was the number you just saw?"
 } 
-function CorrectGuess() {  //If the guess is right.
-    recallscore +=5;
+function CorrectGuess() {  //If the guess is right.    
+    recallscore += 5;
     recallrank.textContent = recallscore;
-    response.textContent = "CORRECT!!!"
+    response.textContent = "CORRECT!!!";
     return response.textContent;
 } 
 function WrongGuess() {  //If the guess is wrong.
-    response.textContent = "Sorry. That's wrong."
+    response.textContent = "Sorry. That's wrong.";
     return response.textContent;
 }
-function RevealNumber() {  //Reveals the number on the viewscreen.
+function RevealNumber() {  //This is actually a NUMBER GENERATOR.
     RandInteger = Math.floor(Math.random()*10)+1;
     RandInteger > 9 ? RandInteger -=2 : RandInteger;    
     Stringnum += RandInteger;
-    viewscreen.textContent = Number(Stringnum);    
+    viewscreen.textContent = Number(Stringnum);
     return viewscreen.textContent;
+} 
+function AnalyzeGuess() {
+    response.textContent = (guessBox.value == Number(Stringnum)) ? CorrectGuess() : WrongGuess();
 }
 /////////////////////////////////////////////////////////////
 
-RevealNumber();
+RevealNumber(); //The initial number is revealed.
 
 let clock = setInterval(function() {
     count +=1;
