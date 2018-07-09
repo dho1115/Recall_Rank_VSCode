@@ -16,6 +16,10 @@ body {
     margin: auto
 } 
 
+.col-lg-12 {
+    height: 5vw;
+}
+
 .container {
     border: 3px solid red;
     margin-top: 3%;
@@ -31,10 +35,10 @@ h1 {
 
 .row {
     border: 3px solid black;
-    margin: auto;
+    margin: auto;    
 } 
 
 .viewscreen {
     border: 1px solid black;
-    text-align: center;
+    color: red;    
 }
